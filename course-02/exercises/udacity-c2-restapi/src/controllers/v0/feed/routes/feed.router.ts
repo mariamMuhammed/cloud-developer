@@ -18,13 +18,41 @@ router.get('/', async (req: Request, res: Response) => {
 
 //@TODO
 //Add an endpoint to GET a specific resource by Primary Key
+router.get('/:id',async(req: Request,res:Response)=>{
+    const id = req.params.id;
+    
+    if(!id){
+        return res.status(404).send({message: 'no such id'});
+    }
+    
+    const record = await FeedItem.findByPk(id);
+    if(record === null)
+        return res.status(404).send({message: 'no such id'});
+    
+    res.send(record);
+    res.send(id);
+});
 
 // update a specific resource
 router.patch('/:id', 
     requireAuth, 
     async (req: Request, res: Response) => {
+        const id = req.params.id;
+        if(!id){
+            return res.status(404).send({message: 'no such id'});
+        }
+        
+        FeedItem.update(req.body,{
+            where: {id:id}
+            
+
+        });
+        
+        
+        
+
         //@TODO try it yourself
-        res.send(500).send("not implemented")
+        
 });
 
 
