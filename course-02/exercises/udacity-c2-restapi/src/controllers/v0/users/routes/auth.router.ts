@@ -14,21 +14,51 @@ const router: Router = Router();
 
 async function generatePassword(plainTextPassword: string): Promise<string> {
     //@TODO Use Bcrypt to Generated Salted Hashed Passwords
+<<<<<<< Updated upstream
+    return "NotYetImplemented"
+=======
+<<<<<<< HEAD
+    return "NotYetImplemented"
+=======
     const saltRound = 10;
     const salt = await bcrypt.genSalt(saltRound);
     const hash = await bcrypt.hash(plainTextPassword,salt); 
     
     return hash;
+>>>>>>> cba95e8562dfb19dfa7b6144191a1cb9144abf0c
+>>>>>>> Stashed changes
 }
 
 async function comparePasswords(plainTextPassword: string, hash: string): Promise<boolean> {
     //@TODO Use Bcrypt to Compare your password to your Salted Hashed Password
+<<<<<<< Updated upstream
+    return true
+=======
+<<<<<<< HEAD
+    return true
+=======
     const compare = await bcrypt.compare(plainTextPassword,hash);
     return compare;
+>>>>>>> cba95e8562dfb19dfa7b6144191a1cb9144abf0c
+>>>>>>> Stashed changes
 }
 
 function generateJWT(user: User): string {
     //@TODO Use jwt to create a new JWT Payload containing
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    return "NotYetImplemented"
+}
+
+export function requireAuth(req: Request, res: Response, next: NextFunction) {
+    console.warn("auth.router not yet implemented, you'll cover this in lesson 5")
+    return next();
+    // if (!req.headers || !req.headers.authorization){
+    //     return res.status(401).send({ message: 'No authorization headers.' });
+    // }
+=======
 
     return  jwt.sign(user,config.jwt.secret);
 }
@@ -38,6 +68,7 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
      if (!req.headers || !req.headers.authorization){
          return res.status(401).send({ message: 'No authorization headers.' });
      }
+>>>>>>> cba95e8562dfb19dfa7b6144191a1cb9144abf0c
     
 
      const token_bearer = req.headers.authorization.split(' ');

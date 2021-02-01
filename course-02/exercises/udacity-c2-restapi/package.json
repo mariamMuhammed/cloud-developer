@@ -6,10 +6,18 @@
   "scripts": {
     "start": "node .",
     "tsc": "tsc",
-    "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
+    "dev": "ts-node-dev ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    "clean": "rimraf www/ || true",
+    "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+=======
     "clean": "rm -rf www/ || true",
     "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www\\tmp && cd www && zip -r Archive.zip . && cd ..",
+>>>>>>> cba95e8562dfb19dfa7b6144191a1cb9144abf0c
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -30,16 +38,30 @@
     "sequelize-typescript": "^0.6.11"
   },
   "devDependencies": {
-    "@types/bluebird": "^3.5.27",
-    "@types/express": "^4.17.0",
-    "@types/node": "^11.13.17",
-    "@types/sequelize": "^4.28.3",
-    "@types/validator": "^10.11.1",
+    "@types/bluebird": "^3.5.33",
+    "@types/express": "^4.17.9",
+    "@types/node": "^11.15.42",
+    "@types/sequelize": "^4.28.9",
+    "@types/validator": "^10.11.3",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    "mocha": "^6.2.3",
+    "rimraf": "^3.0.2",
+    "ts-node-dev": "^1.1.1",
+    "tslint": "^5.20.1",
+    "typescript": "^3.9.7"
+<<<<<<< Updated upstream
+=======
+=======
     "mocha": "^8.2.0",
     "ts-node-dev": "^1.0.0-pre.40",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
+>>>>>>> cba95e8562dfb19dfa7b6144191a1cb9144abf0c
+>>>>>>> Stashed changes
   }
 }

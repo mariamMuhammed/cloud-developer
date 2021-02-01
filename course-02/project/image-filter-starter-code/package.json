@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf www/ || true",
+    "clean": "rimraf www/ || true",
     "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..",
-    "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts"
+    "dev": "ts-node-dev ./src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -29,10 +29,20 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+<<<<<<< Updated upstream
+    "jimp": "^0.16.1",
+    "rimraf": "^3.0.2"
+=======
+<<<<<<< HEAD
+    "jimp": "^0.16.1",
+    "rimraf": "^3.0.2"
+=======
     "express-validator": "^6.6.1",
     "fs": "0.0.1-security",
     "jimp": "^0.16.1",
     "path": "^0.12.7",
     "url-exist": "^2.0.2"
+>>>>>>> cba95e8562dfb19dfa7b6144191a1cb9144abf0c
+>>>>>>> Stashed changes
   }
 }
