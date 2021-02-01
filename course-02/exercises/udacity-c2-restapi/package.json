@@ -8,8 +8,16 @@
     "tsc": "tsc",
     "dev": "ts-node-dev ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
     "clean": "rimraf www/ || true",
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+=======
+    "clean": "rm -rf www/ || true",
+    "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www\\tmp && cd www && zip -r Archive.zip . && cd ..",
+>>>>>>> cba95e8562dfb19dfa7b6144191a1cb9144abf0c
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -26,7 +34,7 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^7.11.0",
     "reflect-metadata": "^0.1.13",
-    "sequelize": "^5.10.0",
+    "sequelize": "^5.22.3",
     "sequelize-typescript": "^0.6.11"
   },
   "devDependencies": {
@@ -37,10 +45,23 @@
     "@types/validator": "^10.11.3",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
     "mocha": "^6.2.3",
     "rimraf": "^3.0.2",
     "ts-node-dev": "^1.1.1",
     "tslint": "^5.20.1",
     "typescript": "^3.9.7"
+<<<<<<< Updated upstream
+=======
+=======
+    "mocha": "^8.2.0",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+>>>>>>> cba95e8562dfb19dfa7b6144191a1cb9144abf0c
+>>>>>>> Stashed changes
   }
 }
